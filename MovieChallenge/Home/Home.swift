@@ -64,6 +64,7 @@ class Home: UIViewController {
     }
     func callAPIPublisher<T: Codable>(text: String) -> AnyPublisher<T, Error> {
         var url = URL(string: "\(Search.urlString)\(Search.apiKey)&query=\(text)")!
+        print("url is", url)
         return DataManagerGenerics().apiCallGeneric(url: url, text: text)
     }
  
